@@ -1,0 +1,24 @@
+.card{
+    background-color: #FF8800;
+    border-color: #FF8800;
+    border-radius: 10px;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+img{
+    height: 70px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .card{
+        height: 100%;
+    }
+}
+
