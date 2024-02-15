@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+        <title>Document</title>    
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+    
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Month', 'Hours per Day'],
+                    ['January', 10],
+                    ['February', 8],
+                    ['March', 5],
+                    ['April', 7],
+                    ['May', 9],
+                    ['June', 6],
+                    ['July', 11],
+                    ['August', 8],
+                    ['September', 5],
+                    ['October', 7],
+                    ['November', 9],
+                    ['December', 6],
+                ]);
+    
+                var options = {
+                    title: 'Monthly Activities'
+                };
+    
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+            }
+    
+            function toggleSection(section) {
+                var sections = document.querySelectorAll('.toolbar-section');
+                sections.forEach(function (el) {
+                    el.classList.remove('active');
+                });
+                document.querySelector('.toolbar-section[data-section="' + section + '"]').classList.add('active');
+            }
+        </script>
+</head>
+<body>
+    <div class="container">
+        <div class="btn-group" role="group" aria-label="Basic outlined example" style="position: relative; top: 20px; left: 80%; z-index: 1;">
+            <button type="button" class="btn btn-outline-secondary">Daily</button>
+            <button type="button" class="btn btn-outline-secondary">Weekly</button>
+            <button type="button" class="btn-active btn-outline-secondary">Monthly</button>
+          </div>
+        <div class="col">
+            <div class="row d-flex justify-content-center">
+                <div id="piechart" style="height: 330px; width: 800px"></div>
+                <h5 class="text-center pb-3">Patients Overview Insights</h5>
+            </div>
+        </div>
+        <div class="row d-flex gap-4 justify-content-center">
+            <div class="card responsive-card" style="max-width: 440px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./images/logo1.png" class="rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text-white">Total Patients Visited</h5>
+                      <h6 class="card-text pt-3 text-white">12345</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card" style="max-width: 440px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./images/logo2.jpg" class="rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text-white">Total Appointments</h5>
+                      <h6 class="card-text pt-3 text-white">12345</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card" style="max-width: 440px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./images/logo4.png" class="rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text-white">Total Cancelled Appointments</h5>
+                      <h6 class="card-text pt-3 text-white">12345</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card" style="max-width: 440px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./images/logo3.png" class="rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text-white">Total Treatments Done</h5>
+                      <h6 class="card-text pt-3 text-white">12345</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
