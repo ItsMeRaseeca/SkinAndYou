@@ -1,12 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-        <title>Document</title>    
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./assets/img/brand/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./main-style.css">
+    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <style data-fullcalendar=""></style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./sweetalert2.min.css"
+    />
+    <title>Skin &amp; You</title>
+    <style>
+      .application-offset .container-application:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        pointer-events: none;
+        height: 430px;
+        background-color: #f80 !important;
+        border-bottom-left-radius: 2.5rem;
+      }
+      .fc-day-past {
+        background-color: #ff850024 !important;
+        color: #000;
+      }
+      .table td,
+      .table th {
+        white-space: unset !important;
+      }
+      .rdt_Table div {
+        white-space: unset !important;
+        overflow: unset !important;
+        text-overflow: unset !important;
+      }
+      .card .table td,
+      .card .table th {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+      }
+      .pdf_footer_table {
+        border: unset !important;
+      }
+      .pdf_footer_table td {
+        border: unset !important;
+        border-top: unset !important;
+        border-bottom: unset !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+      }
+      .table_dropdown_menu {
+        position: unset !important;
+      }
+      .visibility_hidden {
+        visibility: hidden !important;
+      }
+      .drop_navbar:after {
+        color: red !important;
+      }
+    </style>
+    <script defer="defer" src="./static/js/main.afff7364.js"></script>
+    <link href="./static/css/main.0d93fe07.css" rel="stylesheet" />
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+  </head>
+  <body class="application application-offset ready" cz-shortcut-listen="true">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="container-fluid container-application">
+        <div class="sidenav" id="sidenav-main">
+          <div class="sidenav-header d-flex align-items-center">
+            <a class="navbar-brand" href="/"
+              ><img
+                src="https://skinandyou.co.in/assets/img/brand/skin-n-logo.jpg"
+                class="navbar-brand-img"
+                title="Skin &amp; You Clinic"
+                alt="Skin &amp; You Clinic"
+            /></a>
+            <div class="ml-auto">
+              <div
+                class="sidenav-toggler sidenav-toggler-dark d-md-none"
+                data-action="sidenav-unpin"
+                data-target="#sidenav-main"
+              >
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line bg-white"></i
+                  ><i class="sidenav-toggler-line bg-white"></i
+                  ><i class="sidenav-toggler-line bg-white"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center"
+          >
+            <div>
+              <a href="#" class="avatar rounded-circle avatar-xl"
+                ><img
+                  alt="Image placeholder"
+                  src="https://skinandyou.co.in/assets/img/theme/light/user-icon.jpg"
+                  class=""
+              /></a>
+              <div class="mt-2">
+                <h5 class="mb-0 text-white">Skin &amp; You Clinic</h5>
+                <span class="d-block text-sm text-white opacity-8 mb-1"
+                  >________________________</span
+                ><span class="d-block text-md text-white opacity-8 mb-1"
+                  ><i class="fas fa-map-marker-alt"></i> Nariman Point</span
+                >
+              </div>
+            </div>
+            <div class="w-100 mt-2 actions d-flex justify-content-between">
+              <a
+                title="Home"
+                class="action-item action-item-lg text-white pl-0"
+                href="/dashboard"
+                ><i class="far fa-home"></i></a
+              ><a
+                title="Add Appointment"
+                class="action-item action-item-lg text-white pl-0"
+                href="/add-appointment"
+                ><i class="far fa-calendar-check"></i></a
+              ><a
+                title="View All Prescription"
+                class="action-item action-item-lg text-white pr-0"
+                href="/prescription-list"
+                ><i class="far fa-receipt"></i
+              ></a>
+            </div>
+          </div>
+          <div class="nav-application clearfix">
+            <a class="btn btn-square text-sm" href="/appointment"
+              ><span class="btn-inner--icon d-block"
+                ><i class="far fa-calendar-check fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2">Appointments</span></a
+            ><a class="btn btn-square text-sm" href="/patient"
+              ><span class="btn-inner--icon d-block"
+                ><i class="far fa-user-injured fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2">Patients</span></a
+            ><a class="btn btn-square text-sm" href="/purchase-list"
+              ><span class="btn-inner--icon d-block"
+                ><i class="far fa-medkit fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2">Purchase</span></a
+            ><a class="btn btn-square text-sm" href="/product"
+              ><span class="btn-inner--icon d-block"
+                ><i class="far fa-tasks fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2"
+                >Medicine Inventory</span
+              ></a
+            ><a class="btn btn-square text-sm" href="/medicine-category"
+              ><span class="btn-inner--icon d-block"
+                ><i class="fa fa-capsules fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2"
+                >Medicine Category</span
+              ></a
+            ><a class="btn btn-square text-sm" href="/branch-list"
+              ><span class="btn-inner--icon d-block"
+                ><i class="far fa-hospital-user fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2">Branches</span></a
+            ><a class="btn btn-square text-sm" href="/user"
+              ><span class="btn-inner--icon d-block"
+                ><i class="far fa-user-md fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2"
+                >Staff &amp; Doctors</span
+              ></a
+            ><a class="btn btn-square text-sm" href="/sub-disease"
+              ><span class="btn-inner--icon d-block"
+                ><i class="far fa-user fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2">Treatment</span></a
+            ><a class="btn btn-square text-sm" href="/Vendor"
+              ><span class="btn-inner--icon d-block"
+                ><i class="fa fa-building fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2"
+                >Pharma Vendor</span
+              ></a
+            ><a class="btn btn-square text-sm" href="/report"
+              ><span class="btn-inner--icon d-block"
+                ><i class="far fa-file-chart-line fa-2x"></i></span
+              ><span class="btn-inner--icon d-block pt-2">Reports</span></a
+            >
+          </div>
+        </div>
+        <div class="main-content position-relative">
+          <nav
+            class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary navbar-border"
+            id="navbar-main"
+          >
+            <div class="container-fluid">
+              <button
+                class="sidenav-toggler"
+                type="button"
+                data-action="sidenav-pin"
+                data-target="#sidenav-main"
+                aria-controls="navbar-main-collapse"
+                aria-expanded="true"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-user d-lg-none ml-auto">
+                <ul class="navbar-nav flex-row align-items-center">
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="nav-link nav-link-icon"
+                      data-action="omnisearch-open"
+                      data-target="#omnisearch"
+                      ><i class="far fa-search"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="collapse navbar-collapse navbar-collapse-fade"
+                id="navbar-main-collapse"
+              >
+                <ul
+                  class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex"
+                >
+                  <div class="dropdown">
+                    <button
+                      type="button"
+                      id="dropdown-basic"
+                      aria-expanded="false"
+                      class="display_flex dropdown-toggle btn btn-primary"
+                    >
+                      <div
+                        class="media media-pill align-items-center drop_navbar"
+                      >
+                        <span class="avatar rounded-circle"
+                          ><img
+                            alt="Image placeholder"
+                            src="https://skinandyou.co.in/assets/img/theme/light/user-icon.jpg"
+                        /></span>
+                        <div class="ml-2 d-none d-lg-block">
+                          <span class="mb-0 text-sm font-weight-bold"
+                            >Skin &amp; You Clinic</span
+                          >
+                        </div>
+                      </div>
+                    </button>
+                    <div
+                      aria-labelledby="dropdown-basic"
+                      data-bs-popper="static"
+                      class="dropdown-menu dropdown-menu-lg-end"
+                    >
+                      <a
+                        href="#!"
+                        data-rr-ui-dropdown-item=""
+                        class="dropdown-item"
+                        ><h6 class="dropdown-header px-0">Hi, Doctor!</h6></a
+                      ><a
+                        href="#!"
+                        data-rr-ui-dropdown-item=""
+                        class="dropdown-item"
+                        ><a class="color_unset" href="/change-password"
+                          ><i class="far fa-cog"></i>
+                          <span>Change Password</span></a
+                        ></a
+                      >
+                      <hr class="dropdown-divider" role="separator" />
+                      <a
+                        data-rr-ui-dropdown-item=""
+                        class="dropdown-item"
+                        role="button"
+                        tabindex="0"
+                        href="#"
+                        ><a class="color_unset" href="/login"
+                          ><i class="far fa-sign-out-alt"></i>
+                          <span>Logout</span></a
+                        ></a
+                      >
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="page-content">
+            <div class="row justify-content-center">
+              <div class="col-lg-12">
+                <div class="page-title">
+                  <div class="row justify-content-between align-items-center">
+                    <div
+                      class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0"
+                    >
+                      <div class="d-inline-block">
+                        <h5
+                          class="h4 d-inline-block font-weight-400 mb-0 text-white"
+                        >
+                          All Branch
+                        </h5>
+                      </div>
+                    </div>
+                    <div
+                      class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end"
+                    >
+                      <a
+                        class="btn btn-sm btn-white btn-icon rounded-pill"
+                        href="/add-branch"
+                        ><span class="btn-inner--icon"
+                          ><i class="far fa-list"></i></span
+                        ><span class="btn-inner--text">Add New Branch</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="card mt-4">
+                  <div class="card-body card-stats">
+                    <div class="row">
+                      <div class="col-md-12 text-center mt-2 mb-3">
+                        <div class="container">
+                          <div class="btn-group" role="group" aria-label="Basic outlined example" style="position: relative; left: 30%; z-index: 1;">
+                              <button type="button" class="btn btn-outline-primary">Daily</button>
+                              <button type="button" class="btn btn-outline-primary">Weekly</button>
+                              <button type="button" class="btn btn-outline-primary active">Monthly</button>
+                            </div>
+                          <div class="col">
+                              <div class="row d-flex justify-content-center">
+                                  <div id="piechart" style="height: 330px; width: 800px"></div>
+                                  <h5 class="text-center pb-3">Patients Overview Insights</h5>
+                              </div>
+                          </div>
+                          <div class="row d-flex gap-4 justify-content-center">
+                              <div class="card bg-primary report-card responsive-card" style="max-width: 440px;">
+                                  <div class="row g-0">
+                                    <div class="col-md-4">
+                                      <img src="https://cdn-icons-png.flaticon.com/512/3358/3358869.png" class="report-logo" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                      <div class="card-body">
+                                        <h5 class="card-title text-left text-white">Total Patients Visited</h5>
+                                        <h6 class="card-text text-left text-white">12345</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card bg-primary report-card responsive-card" style="max-width: 440px;">
+                                  <div class="row g-0">
+                                    <div class="col-md-4">
+                                      <img src="https://i.pinimg.com/736x/ce/e0/fc/cee0fc2838197c1e64c8bb17046c5d25.jpg" class="report-logo" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                      <div class="card-body">
+                                        <h5 class="card-title text-left text-white">Total Appointments</h5>
+                                        <h6 class="card-text text-left text-white">12345</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card bg-primary report-card responsive-card" style="max-width: 440px;">
+                                  <div class="row g-0">
+                                    <div class="col-md-4">
+                                      <img src="https://icons.veryicon.com/png/o/miscellaneous/development-platform/wrong-14.png" class="report-logo" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                      <div class="card-body">
+                                        <h5 class="card-title text-left text-white">Cancelled Appointments</h5>
+                                        <h6 class="card-text text-left text-white">12345</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card bg-primary report-card responsive-card" style="max-width: 440px;">
+                                  <div class="row g-0">
+                                    <div class="col-md-4">
+                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEIbEdSdSIh7cTSJbo0FPfsM9YEIL6SiOvHhLhtmd9oHl4U_H_72QvMhjLtOqJP5-Kfo&usqp=CAU" class="report-logo" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                      <div class="card-body">
+                                        <h5 class="card-title text-left text-white">Total Treatments Done</h5>
+                                        <h6 class="card-text text-left text-white">12345</h6>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer pt-5 pb-4 footer-light" id="footer-main">
+            <div class="row text-center text-sm-left align-items-sm-center">
+              <div class="col-sm-6">
+                <p class="text-sm mb-0">
+                  © 2023
+                  <a href="#" class="h6 text-sm" target="_blank"
+                    >Skin &amp; You Clinic</a
+                  >. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.core.js"></script>
+    <script src="./assets/libs/moment/min/moment.min.js"></script>
+    <script src="./sweetalert2.min.js"></script>
+    <script src="./main-script.js"></script>
+    <script src="./App.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
         <script type="text/javascript">
             google.charts.load('current', {'packages':['corechart']});
@@ -45,74 +458,5 @@
                 document.querySelector('.toolbar-section[data-section="' + section + '"]').classList.add('active');
             }
         </script>
-</head>
-<body>
-    <div class="container">
-        <div class="btn-group" role="group" aria-label="Basic outlined example" style="position: relative; top: 20px; left: 80%; z-index: 1;">
-            <button type="button" class="btn btn-outline-secondary">Daily</button>
-            <button type="button" class="btn btn-outline-secondary">Weekly</button>
-            <button type="button" class="btn-active btn-outline-secondary">Monthly</button>
-          </div>
-        <div class="col">
-            <div class="row d-flex justify-content-center">
-                <div id="piechart" style="height: 330px; width: 800px"></div>
-                <h5 class="text-center pb-3">Patients Overview Insights</h5>
-            </div>
-        </div>
-        <div class="row d-flex gap-4 justify-content-center">
-            <div class="card responsive-card" style="max-width: 440px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="./images/logo1.png" class="rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text-white">Total Patients Visited</h5>
-                      <h6 class="card-text pt-3 text-white">12345</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card" style="max-width: 440px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="./images/logo2.jpg" class="rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text-white">Total Appointments</h5>
-                      <h6 class="card-text pt-3 text-white">12345</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card" style="max-width: 440px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="./images/logo4.png" class="rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text-white">Total Cancelled Appointments</h5>
-                      <h6 class="card-text pt-3 text-white">12345</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card" style="max-width: 440px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="./images/logo3.png" class="rounded-start" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text-white">Total Treatments Done</h5>
-                      <h6 class="card-text pt-3 text-white">12345</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-    </div>
-</body>
+  </body>
 </html>
