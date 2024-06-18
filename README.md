@@ -2,4 +2,4 @@ A responsive design made for showing Reports of a Dermatologist Clinic Skin&You.
 
 
 Skin&You Reports section content-
-![image](https://github.com/ItsMeRaseeca/SkinAndYou/assets/142300062/2f458c4c-0915-4263-9216-df318085cf94)
+![image](https://github.com/ItsMeRaseeca/SkinAndYou/assets/142300062/1c5b7285-508e-41f4-af3f-32066ad0155f)
